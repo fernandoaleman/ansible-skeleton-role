@@ -1,18 +1,22 @@
-# Ansible Role {{ role_name }}
+# Ansible Role: {{ role_name }}
 
 [![CI](https://github.com/1000Bulbs/ansible-role-{{ role_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/1000Bulbs/ansible-role-{{ role_name }}/actions/workflows/ci.yml)
 
 A brief description of the role goes here.
 
+---
+
 ## Requirements
 
 - Ansible 2.13+
+- Python 3.9+ (for Molecule + testinfra)
 - Tested on Ubuntu 22.04+
-- Python >= 3.9 (if using Molecule + pytest)
+
+---
 
 ## Role Variables
 
-These variables can be defined in your inventory, playbooks, or group_vars:
+These variables can be overridden in your inventory, playbooks, or `group_vars`.
 
 ### Default Variables
 
@@ -22,10 +26,14 @@ Add a list of default variables that are defined in the role's `defaults/main.ym
 
 _No variables defined._
 
+---
+
 ## Dependencies
 
 A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be
 set for other roles, or variables that are used from other roles.
+
+---
 
 ## Installing the Role via `ansible-galaxy`
 
@@ -45,7 +53,7 @@ Then install it with:
 ansible-galaxy role install -r requirements.yml
 ```
 
-This will install the role under `~/.ansible/roles/{{ role_name }}` by default, or to the directory defined in your `ansible.cfg`.
+---
 
 ## Example Playbook
 
@@ -60,11 +68,13 @@ users too:
     - role: {{ role_name }}
 ```
 
+---
+
 ## Testing
 
-This role supports [Molecule](https://molecule.readthedocs.io/) and `pytest-testinfra`.
+This role uses [Molecule](https://molecule.readthedocs.io/) with `pytest-testinfra` for integration testing.
 
-### Run tests
+### Run tests locally
 
 ```bash
 pip install -r requirements.txt
