@@ -1,6 +1,7 @@
 # molecule/default/tests/utils.py
-import yaml
 from pathlib import Path
+
+import yaml
 
 
 def load_yaml(relative_path, default=None):

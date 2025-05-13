@@ -2,16 +2,35 @@
 extends: default
 
 rules:
-  # ansible-lint compatibility
-  # ----------------------------------------------------------------------------
+  # Ansible-friendly comments
   comments:
-    min-spaces-from-content: 1  # ensures one space between # and comment
-  comments-indentation: false   # disables enforcement of comment indentation
+    min-spaces-from-content: 1
+
+  comments-indentation: disable  # better to fully disable, avoids false positives
+
+  # Avoid false positives with Jinja + YAML expressions
   braces:
-    max-spaces-inside: 1        # limits space inside braces
+    max-spaces-inside: 1
+    level: warning  # softer enforcement to avoid false errors with Jinja templates
+
   octal-values:
     forbid-implicit-octal: true
     forbid-explicit-octal: true
-  # ----------------------------------------------------------------------------
 
+  # Often Jinja templates or URLs can exceed line length, disable it
   line-length: disable
+
+  # Prevent YAML gotchas (yes/no/on/off)
+  quoted-strings:
+    required: only-when-needed  # recommended by yamllint to avoid over-quoting
+
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+
+  trailing-spaces: enable
+
+  document-start: enable  # ensures `---` at the top of each file
+
+  empty-lines:
+    max: 1
