@@ -1,3 +1,4 @@
+# Makefile
 .DEFAULT_GOAL := help
 
 .PHONY: install-hooks check lint format uninstall-hooks help
