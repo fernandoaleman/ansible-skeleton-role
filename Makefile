@@ -4,20 +4,19 @@
 .PHONY: install-hooks check lint format uninstall-hooks help
 
 install-hooks:  ## Install all Python tools and register pre-commit Git hook
-	pip install pre-commit black flake8 isort yamllint ansible-lint
+	pip install pre-commit ruff yamllint ansible-lint
 	pre-commit install
 
 check:  ## Run all checks (linting and formatting)
 	pre-commit run --all-files
 
-lint:  ## Run linting tools manually (flake8, yamllint, ansible-lint)
-	flake8 .
+lint:  ## Run linting tools manually (ruff, yamllint, ansible-lint)
+	ruff check .
 	yamllint .
 	ansible-lint .
 
-format:  ## Run Python formatting tools manually (black, isort)
-	black .
-	isort .
+format:  ## Run Python formatting tools manually (ruff)
+	ruff format .
 
 uninstall-hooks:  ## Uninstall pre-commit hook from .git/hooks
 	pre-commit uninstall

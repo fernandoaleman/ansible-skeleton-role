@@ -83,10 +83,11 @@ This role uses a `Makefile` for linting and formatting, and [Molecule](https://m
 # Run all checks (linting and formatting)
 make check
 
-# Run linting tools manually (flake8, yamllint, ansible-lint)
+# Run linting tools manually (ruff, yamllint, ansible-lint)
 make lint
 
-# Run Python formatting tools manually (black, isort)
+# Run Python formatting tools manually (ruff)
+
 make format
 ```
 
@@ -124,7 +125,7 @@ This will:
 - Register a Git hook in .git/hooks/pre-commit
 - Automatically run checks like:
 - Code formatting with black and isort
-- Linting with flake8, yamllint, and ansible-lint
+- Linting with ruff, yamllint, and ansible-lint
 
 ### Remove Git Hooks
 
