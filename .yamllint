@@ -7,22 +7,26 @@ rules:
   comments:
     min-spaces-from-content: 1
 
-  comments-indentation: disable  # better to fully disable, avoids false positives
+  # better to fully disable, avoids false positives
+  comments-indentation: disable
 
   # Avoid false positives with Jinja + YAML expressions
   braces:
     max-spaces-inside: 1
-    level: warning  # softer enforcement to avoid false errors with Jinja templates
+    # softer enforcement to avoid false errors with Jinja templates
+    level: warning
 
   octal-values:
     forbid-implicit-octal: true
     forbid-explicit-octal: true
 
+  # disable line length validation
   line-length: disable
 
   # Prevent YAML gotchas (yes/no/on/off)
   quoted-strings:
-    required: only-when-needed  # recommended by yamllint to avoid over-quoting
+    # recommended by yamllint to avoid over-quoting
+    required: only-when-needed
 
   indentation:
     spaces: 2
@@ -30,7 +34,8 @@ rules:
 
   trailing-spaces: enable
 
-  document-start: enable  # ensures `---` at the top of each file
+  # ensures `---` at the top of each file
+  document-start: enable
 
   empty-lines:
     max: 1

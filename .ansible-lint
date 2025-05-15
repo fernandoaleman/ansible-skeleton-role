@@ -1,3 +1,4 @@
 ---
 skip_list:
-  - yaml[line-length]  # disables line length warnings
+  # disable line length validation
+  - yaml[line-length]
