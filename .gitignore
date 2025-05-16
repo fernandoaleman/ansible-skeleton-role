@@ -1,8 +1,8 @@
 # Ansible
-.ansible
+**/.ansible/
 
 # Python artifacts
-__pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -11,7 +11,8 @@ __pycache__/
 dist/
 build/
 .cache/
-*.sqlite3
+*.sqlite*
+**/.ruff_cache/
 
 # Virtual environments
 .venv/
@@ -43,7 +44,6 @@ molecule/*/provisioner_inventory.yml
 # Testinfra / pytest
 .pytest_cache/
 .testinfra_inventory.yml
-*.tox/
 .coverage
 htmlcov/
 nosetests.xml
