@@ -1,7 +1,7 @@
 # molecule/default/tests/test_default.py
-from utils import load_yaml
+from utils import load_role_vars
 
-vars = load_yaml("../vars/all.yml")
+vars = load_role_vars()
 
 test_file = vars["test_file"]
 
