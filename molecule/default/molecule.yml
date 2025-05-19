@@ -35,6 +35,7 @@ provisioner:
   env:
     ANSIBLE_LOAD_CALLBACK_PLUGINS: true
   playbooks:
+    prepare: ${MOLECULE_PREPARE:-prepare.yml}
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 
 verifier:

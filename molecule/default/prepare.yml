@@ -1,15 +1,12 @@
-# molecule/default/converge.yml
+# molecule/default/playbook.yml
 ---
-- name: Converge
+- name: Prepare test host
   hosts: all
-
-  pre_tasks:
+  become: true
+  tasks:
     - name: Update apt cache
       ansible.builtin.apt:
         update_cache: true
         cache_valid_time: 600
       register: apt_cache_update
       when: ansible_os_family == "Debian"
-
-  roles:
-    - role: {{ role_name }}
