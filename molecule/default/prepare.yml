@@ -1,4 +1,4 @@
-# molecule/default/playbook.yml
+# molecule/default/prepare.yml
 ---
 - name: Prepare test host
   hosts: all
