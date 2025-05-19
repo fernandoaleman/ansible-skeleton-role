@@ -1,6 +1,6 @@
-# Ansible Role: {{ role_name }}
+# Ansible Role: {{ role_name.split('.')[-1] }}
 
-[![CI](https://github.com/1000Bulbs/ansible-role-{{ role_name }}/actions/workflows/ci.yml/badge.svg)](https://github.com/1000Bulbs/ansible-role-{{ role_name }}/actions/workflows/ci.yml)
+[![CI](https://github.com/1000Bulbs/ansible-role-{{ role_name.split('.')[-1] }}/actions/workflows/ci.yml/badge.svg)](https://github.com/1000Bulbs/ansible-role-{{ role_name.split('.')[-1] }}/actions/workflows/ci.yml)
 
 A brief description of the role goes here.
 
@@ -42,7 +42,7 @@ To include this role in your project using a `requirements.yml` file:
 ```yaml
 roles:
   - name: {{ role_name }}
-    src: git@github.com:1000bulbs/ansible-role-{{ role_name }}.git
+    src: git@github.com:1000bulbs/ansible-role-{{ role_name.split('.')[-1] }}.git
     scm: git
     version: master
 ```

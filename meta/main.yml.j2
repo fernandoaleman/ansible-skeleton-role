@@ -4,10 +4,10 @@ dependencies: []
 
 galaxy_info:
   namespace: okb
-  role_name: {{ role_name }}
+  role_name: {{ role_name.split('.')[-1] }}
 
   author: Fernando Aleman
-  description: Role for {{ role_name }}
+  description: Role for {{ role_name.split('.')[-1] }}
   license: MIT
 
   min_ansible_version: "2.13"
