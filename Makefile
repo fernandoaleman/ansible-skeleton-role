@@ -5,6 +5,7 @@
 
 install-hooks:  ## Install all Python tools and register pre-commit Git hook
 	pip install pre-commit ruff yamllint ansible-lint
+	npm install -g markdownlint-cli2
 	pre-commit install
 
 check:  ## Run all checks (linting and formatting)
@@ -14,6 +15,7 @@ lint:  ## Run linting tools manually (ruff, yamllint, ansible-lint)
 	ruff check .
 	yamllint .
 	ansible-lint .
+	markdownlint-cli2 "**/*.md"
 
 format:  ## Run Python formatting tools manually (ruff)
 	ruff format .

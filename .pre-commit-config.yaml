@@ -20,3 +20,10 @@ repos:
         entry: ansible-lint
         language: system
         types: [yaml]
+
+      - id: markdownlint
+        name: markdownlint-cli2
+        entry: markdownlint-cli2
+        language: system
+        types: [markdown]
+        files: \.(md|markdown)$
