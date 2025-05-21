@@ -80,10 +80,10 @@ This role uses a `Makefile` for linting and formatting, and [Molecule](https://m
 #### Lint and Format
 
 ```bash
-# Run all checks (linting and formatting)
-make check
+# Run all code quality checks
+make validate
 
-# Run linting tools manually (ruff, yamllint, ansible-lint)
+# Run linting tools manually (ruff, yamllint, ansible-lint, markdownlint-cli2)
 make lint
 
 # Run Python formatting tools manually (ruff)
