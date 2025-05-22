@@ -72,36 +72,41 @@ users too:
 
 ## 🧪 Testing
 
-This role uses a `Makefile` for linting and formatting, and [Molecule](https://molecule.readthedocs.io/) with
-`pytest-testinfra` for integration testing.
+This role uses Python and Node.js for linting and formatting, Molecule with pytest-testinfra for integration testing,
+and Act for local GitHub Actions testing — all orchestrated through a Makefile for ease of use and convenience.
+
+### Install dependencies
+
+Install all dependencies and setup environment
+
+```bash
+make setup
+```
 
 ### Run tests locally
 
-#### Lint and Format
+#### Lint and Format Checks
+
+Run lint and format checks
 
 ```bash
-# Run all code quality checks
-make validate
-
-# Run linting tools manually (ruff, yamllint, ansible-lint, markdownlint-cli2)
-make lint
-
-# Run Python formatting tools manually (ruff)
-make format
+make check
 ```
 
 #### Integration Tests
 
-Install dependencies
+Run integration tests
 
 ```bash
-pip install -r requirements.txt
+make test
 ```
 
-Run Molecule integration tests
+#### GitHub Actions Tests
+
+Run github actions tests locally
 
 ```bash
-molecule test
+make ci
 ```
 
 ---
@@ -142,6 +147,14 @@ This will:
 - Code formatting with black and isort
 - Linting with ruff, yamllint, and ansible-lint
 
+### Test Git Hooks
+
+```bash
+make test-hooks
+```
+
+This will run the pre-commit hooks on all files, the same as when you run `git commit`.
+
 ### Remove Git Hooks
 
 ```bash
@@ -150,7 +163,7 @@ make uninstall-hooks
 
 This removes the Git pre-commit hook and disables automatic checks.
 
-💡 Even with hooks uninstalled, you can still run the same checks manually with `make test`.
+💡 Even with hooks uninstalled, you can still run the same checks manually with `make test-hooks`.
 
 Why Use Git Hooks?
 
